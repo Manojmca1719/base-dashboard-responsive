@@ -1,0 +1,101 @@
+@import "./common-styles.scss";
+
+.customized-height {
+  height: 100vh;
+  overflow: hidden;
+  .bg-navbar {
+    background-color: $primary;
+    color: #fff;
+  }
+
+  .base-layout-grid {
+    display: grid;
+    height: 100%;
+
+    .grid-main-menu {
+      background-color: $primary;
+      padding: 1.5rem 0;
+      list-style: none;
+      padding: 0;
+
+      .grid-main-menu-item {
+        color: #fff;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+          background-color: $primary-light;
+        }
+      }
+
+      .bottom-main-menu {
+        align-items: end;
+        position: absolute;
+        bottom: 0;
+        transition: .2s all ease-in-out;
+      }
+    }
+
+    .grid-toggled-menu {
+      border-right: 2px solid $secondary-dark;
+      background-color: $secondary;
+      padding: 1.5rem 0;
+    }
+
+    .grid-content-area {
+      padding: 1.5rem;
+    }
+  }
+
+  .isToggledActive {
+    grid-template-columns: 50px 0 auto;
+    transition: .2s all ease-in-out;
+
+    .grid-toggled-menu {
+      border: 0;
+    }
+  }
+
+  .isMobileToggledActive {
+    grid-template-columns: 0 0 auto;
+    transition: .2s all ease-in-out;
+
+    .grid-toggled-menu {
+      border: 0;
+    }
+  }
+
+  .isToggledDeActive {
+    grid-template-columns: 50px 200px auto;
+    transition: .2s all ease-in-out;
+  }
+}
+
+.mainMenuOffcanvas {
+  .offcanvas-body {
+    background-color: $primary;
+    color: #fff;
+
+    .grid-main-menu {
+      background-color: $primary;
+      padding: 1.5rem 0;
+      list-style: none;
+      padding: 0;
+
+      .grid-main-menu-item {
+        color: #fff;
+        height: 50px;
+        display: flex;
+        padding-left: 15px;
+        align-items: center;
+        border-bottom:1px solid $light;
+
+        &:hover {
+          background-color: $primary-light;
+        }
+      }
+    }
+  }
+}
